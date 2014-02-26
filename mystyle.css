@@ -9,12 +9,15 @@
     height: 100px;
     border-radius: 100px;
     display: block;
-    margin:0 20px;
+    margin: 0 20px;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100%;
     z-index: 10;
+}
 
+a {
+    color: #949494;
 }
 
 .sequence {
@@ -41,7 +44,7 @@
 .score {
     color: #949494;
     font-size: 25px;
-    font-weight:bold;
+    font-weight: bold;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -55,19 +58,44 @@
     text-align: center;
     line-height: 100px;
 }
+
 .listitem {
     padding: 20px;
     border-top: 1px solid #d0cfd3;
 }
 
-#firstone .name{
+#firstone .sequence {
+    display:inline-block;
+    position:relative;
+}
+
+#firstone .name {
     height: 50px;
     line-height: 50px;
     text-align: left;
-    width: 400px;
 }
-#firstone .score{
+
+#firstone .score {
     height: 50px;
     line-height: 50px;
-    float: left;
+    text-align: left;
+}
+
+#firstone div {
+    display:inline-block;
+    vertical-align:top;
+}
+
+.popup-button {
+    width: 170px;
+    height: 30px;
+    border-radius: 36px;
+    border: 0;
+}
+
+.detail {
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    font-size:25px;
 }

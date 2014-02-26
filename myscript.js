@@ -1,8 +1,13 @@
-﻿$(function () {
+﻿var dialogHasShown = false;
+
+$(function () {
     $.mobile.navigate("#page2");
     $("#page2").on("pageshow", function (event) {
         console.log("pageshow page2 loaded");
-        $('#popupDialog').popup("open");
+        if (!dialogHasShown) {
+            $('#popupDialog').popup("open");
+            dialogHasShown = true;
+        }
         $('#average').addClass("ui-btn-active");
         //loading data
         var data = getData();
@@ -13,54 +18,55 @@
                 // First one
                 insert += '<li>'
                         + '<div id="firstone" class="listitem">'
-                        + '<label class="sequence float-left" style="font-size: 25px; margin: 0">' + (i + 1) + '</label>'
-                        + '<div class="avatar float-left" style="background-image: url(' + data[i].avatar + ');margin-bottom:200px"></div>'
-                        +'<div>'
-                          + '  <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">'+ data[i].name +'</label>'
-                            + '<label class="float-right score" style="font-size: 30px; font-weight: bold; margin: 0">' + data[i].score + '</label>'
-                            +'<div>'
-                                +'<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：Beats Tour耳机</label>'
-                                +'<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">价值：1500元</label>'
-                                +'<img   src="Images/Award/女神.png" />'
-                            +'</div>'
-                           +' <div>'
-                                 +'<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：知名企业面试机会</label>'
-                                +' <img   src="Images/Award/面试机会.png" />'
-                            +' </div>'
-                       +'  </div>'
-                       +'  <div class="clear"></div>'
-                  +'   </div>'
+                        + '<label class="sequence" style="margin: 0">' + (i + 1) + '</label>'
+                        + '<div class="avatar" style="background-image: url(' + data[i].avatar + ');"></div>'
+                        + '<div>'
+                            + '<label class="name" style=" font-weight: bold; margin: 0">' + data[i].name + '</label>'
+                            + '<label class="score" style="font-weight: bold; margin: 0">' + data[i].score + '</label><br/>'
+                            + '<div style="display:block;">'
+                                + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">奖品：Beats Tour耳机</label>'
+                                + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">价值：1500元</label>'
+                                + '<img style="position:absolute;right: 10px;top:5px;" src="Images/Award/女神.png" />'
+                            + '</div>'
+                            + '<hr style="height: 2px;background-color: #ddd;border: none;"/>'
+                           + ' <div  style="display:block">'
+                                 + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">奖品：知名企业面试机会</label>'
+                                + ' <img style="position:absolute;right: 10px;top:260px;" src="Images/Award/面试机会.png" /><div class="clear"></div>'
+                            + ' </div>'
+                       + '  </div>'
+                       + '  <div class="clear"></div>'
+                  + '   </div>'
                     + '</li>';
             } else if (i == data.length - 1) {
                 // Last one
                 insert += '<li>'
                         + '<div id="firstone" class="listitem">'
-                        + '<label class="sequence float-left" style="font-size: 25px; margin: 0">' + (i + 1) + '</label>'
-                        + '<div class="avatar float-left" style="background-image: url(' + data[i].avatar + ');margin-bottom:200px"></div>'
+                        + '<label class="sequence" style="margin: 0">' + (i + 1) + '</label>'
+                        + '<div class="avatar" style="background-image: url(' + data[i].avatar + ');"></div>'
                         + '<div>'
-                          + '  <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">' + data[i].name + '</label>'
-                            + '<label class="float-right score" style="font-size: 30px; font-weight: bold; margin: 0">' + data[i].score + '</label>'
-                            + '<div>'
-                                + '<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：阿狸公仔</label>'
-                                + '<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">价值：150元</label>'
-                                + '<img   src="Images/Award/阿狸.png" />'
+                            + '<label class="name" style=" font-weight: bold; margin: 0">' + data[i].name + '</label>'
+                            + '<label class="score" style="font-weight: bold; margin: 0">' + data[i].score + '</label><br/>'
+                            + '<div style="display:block;">'
+                                + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">奖品：阿狸公仔</label>'
+                                + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">价值：150元</label>'
+                                + '<img style="position:absolute;right: 10px;top:5px;" src="Images/Award/阿狸.png" />'
                             + '</div>'
-                           + ' <div>'
-                                 + '<label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：知名企业面试机会</label>'
-                                + ' <img   src="Images/Award/面试机会.png" />'
+                            + '<hr style="height: 2px;background-color: #ddd;border: none;"/>'
+                           + ' <div  style="display:block">'
+                                 + '<label class="detail" style="font-size:25px; font-weight: bold; margin: 0">奖品：知名企业面试机会</label>'
+                                + ' <img style="position:absolute;right: 10px;top:260px;" src="Images/Award/面试机会.png" /><div class="clear"></div>'
                             + ' </div>'
                        + '  </div>'
                        + '  <div class="clear"></div>'
                   + '   </div>'
                     + '</li>';
             } else {
-                // Last one
                 insert += '<li>'
                         + '<div id="lastone" class="listitem">'
-                            + '<label class="float-left sequence" style="font-size:25px;margin:0">' + (i + 1) + '</label>'
+                            + '<label class="float-left sequence" style="margin:0">' + (i + 1) + '</label>'
                             + '<div class="float-left avatar" style="background-image:url(' + data[i].avatar + ')"></div>'
-                            + '<label class="float-left name" style="font-size:25px;font-weight: bold;margin:0">' + data[i].name + '</label>'
-                            + '<label class="float-right score" style="font-size:30px;font-weight: bold;margin:0">' + data[i].score + '</label>'
+                            + '<label class="float-left name" style="font-weight: bold;margin:0">' + data[i].name + '</label>'
+                            + '<label class="float-right score" style="font-weight: bold;margin:0">' + data[i].score + '</label>'
                             + '<div class="clear"></div>'
                         + '</div>'
                     + '</li>';
