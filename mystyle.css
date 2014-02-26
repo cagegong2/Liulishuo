@@ -1,0 +1,73 @@
+﻿body {
+}
+
+.avatar {
+    position: relative;
+    background-color: #808080;
+    border: 2px solid #808080;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    display: block;
+    margin:0 20px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+    z-index: 10;
+
+}
+
+.sequence {
+    color: #949494;
+    font-size: 25px;
+    width: 40px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.score {
+    color: #949494;
+    font-size: 25px;
+    font-weight:bold;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.name {
+    color: #949494;
+    font-size: 25px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+.listitem {
+    padding: 20px;
+    border-top: 1px solid #d0cfd3;
+}
+
+#firstone .name{
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    width: 400px;
+}
+#firstone .score{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}

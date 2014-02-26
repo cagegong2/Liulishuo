@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+    <script src="json2.js"></script>
+    <link href="mystyle.css" rel="stylesheet" />
+    <script src="myscript.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div data-role="page" data-control-title="活动详情" id="page1">
+        <div data-role="header" data-position="fixed">
+            <h3>活动详情
+        </h3>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top" role="navigation">
+                    <ul>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_EventDetail.png" /><br />
+                            活动详情
+                        </a>
+
+                        </li>
+                        <li><a href="#page2" data-transition="fade">
+                            <img src="Images/Icon/icon_Leaderboard.png" /><br />
+                            排行榜
+                        </a>
+
+                        </li>
+                        <li><a href="#page3" data-transition="fade">
+                            <img src="Images/Icon/icon_Winner.png" /><br />
+                            成绩公布
+                        </a>
+
+                        </li>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_Me.png" /><br />
+                            我
+                        </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" data-control-title="排行榜" id="page2">
+        <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width: 400px;">
+            <div role="main" class="ui-content">
+                <h3 class="ui-title">赢取特别大奖</h3>
+                <p>人气榜总冠军由用户投票决定，快让朋友们来加油，赢取双人美国往返机票吧！</p>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">不要大奖</a>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">去拉票</a>
+            </div>
+        </div>
+        <div data-role="header" data-position="fixed">
+            <h3>排行榜
+        </h3>
+        </div>
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li id="average" class="ui-btn-active">
+                        <a class="ui-btn-active" data-transition="fade">平均分榜
+                </a>
+                    </li>
+                    <li>
+                        <a data-transition="fade">人气榜
+                </a>
+                    </li>
+                </ul>
+            </div>
+            <ul id="userlist" data-role="listview" data-divider-theme="b" data-inset="true">
+                <li>
+                    <div id="firstone" class="listitem">
+                        <label class="sequence float-left" style="font-size: 25px; margin: 0">1</label>
+                        <div class="avatar float-left" style="background-image: url(Images/Avatars/1.jpg); margin-bottom: 400px"></div>
+
+                        <div>
+                            <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">羊圈托尼</label>
+                            <label class="float-right score" style="font-size: 30px; font-weight: bold; margin: 0">96.73</label>
+                            <div>
+                                <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：Beats Tour耳机</label>
+                                <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">价值：1500元</label>
+                                <img src="Images/Award/女神.png" />
+                            </div>
+                            <div>
+                                <label class="name float-left" style="font-size: 25px; font-weight: bold; margin: 0">奖品：知名企业面试机会</label>
+                                <img src="Images/Award/面试机会.png" />
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#page1" data-transition="slide">Button
+                </a>
+                </li>
+                <li>
+                    <a href="#page1" data-transition="slide">Button
+                </a>
+                </li>
+                <li>
+                    <a href="#page1" data-transition="slide">Button
+                </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top" role="navigation">
+                <ul>
+                    <li><a href="#page1" data-transition="fade">
+                        <img src="Images/Icon/icon_EventDetail.png" /><br />
+                        活动详情
+                    </a>
+
+                    </li>
+                    <li><a href="#page2" data-transition="fade">
+                        <img src="Images/Icon/icon_Leaderboard.png" /><br />
+                        排行榜
+                    </a>
+
+                    </li>
+                    <li><a href="#page3" data-transition="fade">
+                        <img src="Images/Icon/icon_Winner.png" /><br />
+                        成绩公布
+                    </a>
+
+                    </li>
+                    <li><a href="#page1" data-transition="fade">
+                        <img src="Images/Icon/icon_Me.png" /><br />
+                        我
+                    </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" data-control-title="活动详情" id="page3">
+        <div data-role="header" data-position="fixed">
+            <h3>成绩公布
+        </h3>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top" role="navigation">
+                    <ul>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_EventDetail.png" /><br />
+                            活动详情
+                        </a>
+
+                        </li>
+                        <li><a href="#page2" data-transition="fade">
+                            <img src="Images/Icon/icon_Leaderboard.png" /><br />
+                            排行榜
+                        </a>
+
+                        </li>
+                        <li><a href="#page3" data-transition="fade">
+                            <img src="Images/Icon/icon_Winner.png" /><br />
+                            成绩公布
+                        </a>
+
+                        </li>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_Me.png" /><br />
+                            我
+                        </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" data-control-title="活动详情" id="page4">
+        <div data-role="header" data-position="fixed">
+            <h3>我</h3>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top" role="navigation">
+                    <ul>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_EventDetail.png" /><br />
+                            活动详情
+                        </a>
+
+                        </li>
+                        <li><a href="#page2" data-transition="fade">
+                            <img src="Images/Icon/icon_Leaderboard.png" /><br />
+                            排行榜
+                        </a>
+
+                        </li>
+                        <li><a href="#page3" data-transition="fade">
+                            <img src="Images/Icon/icon_Winner.png" /><br />
+                            成绩公布
+                        </a>
+
+                        </li>
+                        <li><a href="#page1" data-transition="fade">
+                            <img src="Images/Icon/icon_Me.png" /><br />
+                            我
+                        </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
